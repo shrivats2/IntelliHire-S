@@ -26,7 +26,6 @@ const ApplyJob = ({ params }: ApplyJobProps) => {
 
   const handleMouseMove = (e: any) => {
     setPosition({ x: e.clientX, y: e.clientY });
-    console.log(position);
   };
 
   useEffect(() => {
