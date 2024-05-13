@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { useRouter } from "next/navigation";
 import useAuthStore from "@/store/useUserContext";
 import {
@@ -136,12 +136,10 @@ const Result = ({ params }: ResultProps) => {
               <CardContent className="break-words">
                 <div className="flex flex-col">
                   {isExpanded ? (
-                    ReactHtmlParser(finalverdict.description)
+                    parse(finalverdict.description)
                   ) : finalverdict.description.length > 100 ? (
                     <div>
-                      {ReactHtmlParser(
-                        finalverdict.description.substring(0, 100)
-                      )}
+                      {parse(finalverdict.description.substring(0, 100))}
                     </div>
                   ) : (
                     finalverdict.description

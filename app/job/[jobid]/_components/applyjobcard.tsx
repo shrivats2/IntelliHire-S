@@ -20,7 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { toast } from "sonner";
 import axios from "axios";
 import { Copy, Share2 } from "lucide-react";
@@ -98,9 +98,9 @@ const ApplyJobCard = ({ jobid }: { jobid: string }) => {
       <CardContent className="break-words">
         <div className="flex flex-col">
           {isExpanded ? (
-            ReactHtmlParser(description)
+            parse(description)
           ) : description.length > 100 ? (
-            <div>{ReactHtmlParser(description.substring(0, 100))}</div>
+            <div>{parse(description.substring(0, 100))}</div>
           ) : (
             description
           )}

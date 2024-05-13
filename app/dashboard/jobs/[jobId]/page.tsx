@@ -14,7 +14,7 @@ import useAuthStore from "@/store/useUserContext";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import ReactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import {
   Dialog,
   DialogClose,
@@ -233,11 +233,9 @@ const JobDetails = ({ params }: JobDetailsProps) => {
           <CardContent className="break-words">
             <div className="flex flex-col">
               {isExpanded ? (
-                ReactHtmlParser(details.description)
+                parse(details.description)
               ) : details.description.length > 100 ? (
-                <div>
-                  {ReactHtmlParser(details.description.substring(0, 100))}
-                </div>
+                <div>{parse(details.description.substring(0, 100))}</div>
               ) : (
                 details.description
               )}
