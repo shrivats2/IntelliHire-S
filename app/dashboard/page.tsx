@@ -141,7 +141,7 @@ const Dashboard = (props: Props) => {
   );
 };
 
-export const JobsSkeleton = () => {
+const JobsSkeleton = () => {
   return (
     <>
       {[...Array(4)].map((_, i) => (

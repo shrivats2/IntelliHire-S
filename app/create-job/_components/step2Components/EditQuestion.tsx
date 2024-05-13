@@ -87,7 +87,7 @@ export default function EditQuestionModal({ question, open, onClose }: any) {
         <DialogHeader>
           <DialogTitle>Edit Question</DialogTitle>
           <DialogDescription>
-            Make changes to question here. Click save when you're done.
+            Make changes to question here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-5">
@@ -104,7 +104,7 @@ export default function EditQuestionModal({ question, open, onClose }: any) {
         </div>
         {editedQuestion.quiz_question_options.map(
           (option: any, index: number) => (
-            <div>
+            <div key={index}>
               <Label htmlFor={`option ${index + 1}`} className="text-right">
                 Option {index + 1}
               </Label>

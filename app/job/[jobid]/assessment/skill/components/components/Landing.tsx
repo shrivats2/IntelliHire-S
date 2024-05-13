@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import CodeEditorWindow from "./CodeEditorWindow";
 import axios from "axios";
-import { classnames } from "../utils/general";
 import { languageOptions } from "../constants/languageOptions";
 
 import { defineTheme } from "../lib/defineTheme";
@@ -14,6 +13,7 @@ import ThemeDropdown from "./ThemeDropdown";
 import LanguagesDropdown from "./LanguagesDropdown";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const javascriptDefault = `/**
 * Problem: Program For Stock Buy Sell To Maximize Profit.
@@ -235,7 +235,7 @@ const Landing = () => {
             <Button
               onClick={handleCompile}
               disabled={!code}
-              className={classnames(
+              className={cn(
                 "mt-4 border-2 border-black z-10 rounded-md shadow-[5px_5px_0px_0px_rgba(0,0,0)] px-4 py-2 hover:shadow transition duration-200  flex-shrink-0",
                 !code ? "opacity-50" : ""
               )}

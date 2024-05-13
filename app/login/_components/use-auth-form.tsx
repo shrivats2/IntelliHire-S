@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { redirect, useSearchParams } from "next/navigation";
+import { redirect } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -31,7 +31,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   });
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
-  const searchParams = useSearchParams();
   const router = useRouter();
   const { login } = useAuthStore((state) => state);
   const isUser = useAuthStore((state) => state.user);
